@@ -213,7 +213,7 @@ const Service = () => {
             <div>
               <strong className="text-foreground">Контакты:</strong><br />
               +7 (xxx) xxx-xx-xx<br />
-              service@veltory.ru
+              service@heparamotores.ru
             </div>
           </div>
         </section>

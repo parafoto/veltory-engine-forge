@@ -73,7 +73,7 @@ const About = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            О компании VELTORY
+            О компании HEPARAMOTORES
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Мы — инженерный дилер H&E в России. Не просто продаём двигатели, 

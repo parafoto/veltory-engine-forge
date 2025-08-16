@@ -25,7 +25,7 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="font-bold text-xl text-primary">VELTORY</div>
+            <div className="font-bold text-xl text-primary">HEPARAMOTORES</div>
             <div className="hidden sm:block text-sm text-muted-foreground">
               Engineering Atelier
             </div>
@@ -65,7 +65,7 @@ const Header = () => {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <div className="flex items-center justify-between mb-6">
-                <div className="font-bold text-lg text-primary">VELTORY</div>
+                <div className="font-bold text-lg text-primary">HEPARAMOTORES</div>
                 <Button
                   variant="ghost"
                   size="icon"

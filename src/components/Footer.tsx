@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <div className="font-bold text-xl mb-4">VELTORY</div>
+            <div className="font-bold text-xl mb-4">HEPARAMOTORES</div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-4">
               Официальный дилер двигателей H&E в России. 
               Поставка, установка, сервис и ЗИП для парамоторных двигателей 
@@ -61,7 +61,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Контакты</h4>
             <div className="space-y-2 text-sm text-primary-foreground/80">
               <div>+7 (xxx) xxx-xx-xx</div>
-              <div>info@veltory.ru</div>
+              <div>info@heparamotores.ru</div>
               <div className="text-xs leading-relaxed">
                 г. Москва, ул. Промышленная, д. 1
               </div>
@@ -73,7 +73,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 mt-8 pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center text-sm text-primary-foreground/70">
             <div className="mb-4 sm:mb-0">
-              © {currentYear} VELTORY. H&E — товарный знак их правообладателей. 
+              © {currentYear} HEPARAMOTORES. H&E — товарный знак их правообладателей. 
               Использование — номинативное.
             </div>
             <div className="flex space-x-4">

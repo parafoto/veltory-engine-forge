@@ -287,7 +287,7 @@ const ShippingWarranty = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center text-primary-foreground/90">
             <div>📞 +7 (xxx) xxx-xx-xx</div>
-            <div>📧 info@veltory.ru</div>
+            <div>📧 info@heparamotores.ru</div>
             <div>🕒 Пн-Пт: 9:00-18:00</div>
           </div>
         </section>

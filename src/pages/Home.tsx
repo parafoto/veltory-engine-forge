@@ -4,113 +4,86 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import LeadForm from "@/components/LeadForm";
 import { CheckCircle, Zap, Settings, Shield, Users, ArrowRight } from "lucide-react";
-
 const Home = () => {
-  const engineModels = [
-    {
-      name: "MVL",
-      description: "Легкий двигатель для начинающих",
-      weight: "6.8 кг",
-      thrust: "70 Н",
-      link: "/engines/mvl"
-    },
-    {
-      name: "MV1",
-      description: "Универсальный двигатель",
-      weight: "7.2 кг",
-      thrust: "80 Н",
-      link: "/engines/mv1"
-    },
-    {
-      name: "MV2",
-      description: "Мощный двигатель для опытных пилотов",
-      weight: "7.8 кг",
-      thrust: "90 Н",
-      link: "/engines/mv2"
-    },
-    {
-      name: "RS206",
-      description: "Профессиональный двигатель",
-      weight: "8.1 кг",
-      thrust: "95 Н",
-      link: "/engines/rs206"
-    },
-    {
-      name: "Raptor 277",
-      description: "Топовая модель с максимальной тягой",
-      weight: "8.5 кг",
-      thrust: "105 Н",
-      link: "/engines/raptor-277"
-    }
-  ];
-
-  const advantages = [
-    {
-      icon: Zap,
-      title: "Оптимальная тяга/вес",
-      description: "Лучшее соотношение мощности к массе в классе"
-    },
-    {
-      icon: Settings,
-      title: "Низкая вибрация",
-      description: "Сбалансированные двигатели для комфортных полётов"
-    },
-    {
-      icon: Shield,
-      title: "Высокий ресурс",
-      description: "До 300 часов при соблюдении регламента ТО"
-    },
-    {
-      icon: Users,
-      title: "Сервис в РФ",
-      description: "Диагностика, ТО и ремонт в Москве"
-    }
-  ];
-
-  const processSteps = [
-    {
-      number: "01",
-      title: "Заявка",
-      description: "Оставляете контакты и требования"
-    },
-    {
-      number: "02", 
-      title: "Подбор и счёт",
-      description: "Подбираем двигатель, готовим предложение"
-    },
-    {
-      number: "03",
-      title: "Поставка/установка",
-      description: "Доставляем или устанавливаем на раму"
-    },
-    {
-      number: "04",
-      title: "Гарантия/ТО",
-      description: "Гарантийное и сервисное обслуживание"
-    }
-  ];
-
-  const faqItems = [
-    {
-      question: "Как происходит запуск двигателя?",
-      answer: "Все двигатели H&E имеют ручной стартер. Электростартер доступен как опция для большинства моделей."
-    },
-    {
-      question: "Какой регламент технического обслуживания?",
-      answer: "ТО-1 каждые 25 часов, ТО-2 каждые 100 часов. Детальный регламент предоставляется с каждым двигателем."
-    },
-    {
-      question: "Какая гарантия на двигатели?",
-      answer: "12 месяцев с момента продажи при соблюдении регламента эксплуатации и использовании рекомендованных ГСМ."
-    },
-    {
-      question: "Совместимы ли двигатели с российскими рамами?",
-      answer: "Да, у нас есть переходники для установки на популярные рамы: Спорт, Парма, Fresh Breeze и другие."
-    }
-  ];
-
-  return (
-    <div>
+  const engineModels = [{
+    name: "MVL",
+    description: "Легкий двигатель для начинающих",
+    weight: "6.8 кг",
+    thrust: "70 Н",
+    link: "/engines/mvl"
+  }, {
+    name: "MV1",
+    description: "Универсальный двигатель",
+    weight: "7.2 кг",
+    thrust: "80 Н",
+    link: "/engines/mv1"
+  }, {
+    name: "MV2",
+    description: "Мощный двигатель для опытных пилотов",
+    weight: "7.8 кг",
+    thrust: "90 Н",
+    link: "/engines/mv2"
+  }, {
+    name: "RS206",
+    description: "Профессиональный двигатель",
+    weight: "8.1 кг",
+    thrust: "95 Н",
+    link: "/engines/rs206"
+  }, {
+    name: "Raptor 277",
+    description: "Топовая модель с максимальной тягой",
+    weight: "8.5 кг",
+    thrust: "105 Н",
+    link: "/engines/raptor-277"
+  }];
+  const advantages = [{
+    icon: Zap,
+    title: "Оптимальная тяга/вес",
+    description: "Лучшее соотношение мощности к массе в классе"
+  }, {
+    icon: Settings,
+    title: "Низкая вибрация",
+    description: "Сбалансированные двигатели для комфортных полётов"
+  }, {
+    icon: Shield,
+    title: "Высокий ресурс",
+    description: "До 300 часов при соблюдении регламента ТО"
+  }, {
+    icon: Users,
+    title: "Сервис в РФ",
+    description: "Диагностика, ТО и ремонт в Москве"
+  }];
+  const processSteps = [{
+    number: "01",
+    title: "Заявка",
+    description: "Оставляете контакты и требования"
+  }, {
+    number: "02",
+    title: "Подбор и счёт",
+    description: "Подбираем двигатель, готовим предложение"
+  }, {
+    number: "03",
+    title: "Поставка/установка",
+    description: "Доставляем или устанавливаем на раму"
+  }, {
+    number: "04",
+    title: "Гарантия/ТО",
+    description: "Гарантийное и сервисное обслуживание"
+  }];
+  const faqItems = [{
+    question: "Как происходит запуск двигателя?",
+    answer: "Все двигатели H&E имеют ручной стартер. Электростартер доступен как опция для большинства моделей."
+  }, {
+    question: "Какой регламент технического обслуживания?",
+    answer: "ТО-1 каждые 25 часов, ТО-2 каждые 100 часов. Детальный регламент предоставляется с каждым двигателем."
+  }, {
+    question: "Какая гарантия на двигатели?",
+    answer: "12 месяцев с момента продажи при соблюдении регламента эксплуатации и использовании рекомендованных ГСМ."
+  }, {
+    question: "Совместимы ли двигатели с российскими рамами?",
+    answer: "Да, у нас есть переходники для установки на популярные рамы: Спорт, Парма, Fresh Breeze и другие."
+  }];
+  return <div>
       {/* Hero Section */}
       <section className="bg-gradient-hero text-primary-foreground py-20 lg:py-32">
         <div className="container mx-auto px-4">
@@ -118,12 +91,8 @@ const Home = () => {
             <Badge variant="secondary" className="mb-6 bg-background/20 text-primary-foreground border-primary-foreground/20">
               Официальный дилер H&E в России
             </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-              Двигатели H&E для парамоторов
-            </h1>
-            <p className="text-xl lg:text-2xl text-primary-foreground/90 mb-8 leading-relaxed">
-              MVL, MV1, MV2, RS206, Raptor 277. Поставка, установка на рамы, сервис и ЗИП в РФ.
-            </p>
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">Двигатели для парамоторов</h1>
+            <p className="text-xl lg:text-2xl text-primary-foreground/90 mb-8 leading-relaxed">MVL, MV1, MV2, RS206, Raptor 277. Поставка, установка на рамы, сервис в РФ.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="cta" size="lg" asChild>
                 <Link to="/engines">Подобрать двигатель</Link>
@@ -149,8 +118,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-            {engineModels.map((engine) => (
-              <Card key={engine.name} className="hover:shadow-large transition-all duration-300 group cursor-pointer">
+            {engineModels.map(engine => <Card key={engine.name} className="hover:shadow-large transition-all duration-300 group cursor-pointer">
                 <Link to={engine.link}>
                   <CardHeader className="pb-4">
                     <div className="w-full h-32 bg-muted rounded-md mb-4 flex items-center justify-center">
@@ -179,8 +147,7 @@ const Home = () => {
                     </div>
                   </CardContent>
                 </Link>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -198,8 +165,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {advantages.map((advantage, index) => (
-              <div key={index} className="text-center">
+            {advantages.map((advantage, index) => <div key={index} className="text-center">
                 <div className="w-16 h-16 mx-auto mb-4 bg-accent/10 rounded-full flex items-center justify-center">
                   <advantage.icon className="w-8 h-8 text-accent" />
                 </div>
@@ -209,8 +175,7 @@ const Home = () => {
                 <p className="text-muted-foreground">
                   {advantage.description}
                 </p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -228,8 +193,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="relative">
+            {processSteps.map((step, index) => <div key={index} className="relative">
                 <div className="text-center">
                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-accent rounded-full flex items-center justify-center text-cta-foreground font-bold text-xl">
                     {step.number}
@@ -241,11 +205,8 @@ const Home = () => {
                     {step.description}
                   </p>
                 </div>
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-border transform -translate-x-1/2 -translate-y-1/2"></div>
-                )}
-              </div>
-            ))}
+                {index < processSteps.length - 1 && <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-border transform -translate-x-1/2 -translate-y-1/2"></div>}
+              </div>)}
           </div>
         </div>
       </section>
@@ -264,8 +225,7 @@ const Home = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {faqItems.map((item, index) => (
-                <Card key={index}>
+              {faqItems.map((item, index) => <Card key={index}>
                   <CardHeader>
                     <CardTitle className="text-lg flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-success mt-0.5 shrink-0" />
@@ -277,8 +237,7 @@ const Home = () => {
                       {item.answer}
                     </p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -301,8 +260,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Home;

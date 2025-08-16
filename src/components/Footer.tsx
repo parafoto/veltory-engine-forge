@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
-
 const Footer = () => {
   const currentYear = 2025;
-
-  return (
-    <footer className="bg-primary text-primary-foreground">
+  return <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
@@ -61,7 +58,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Контакты</h4>
             <div className="space-y-2 text-sm text-primary-foreground/80">
               <div>+7 (xxx) xxx-xx-xx</div>
-              <div>info@heparamotores.ru</div>
+              <div>info@heparamotor.ru</div>
               <div className="text-xs leading-relaxed">
                 г. Москва, ул. Промышленная, д. 1
               </div>
@@ -87,8 +84,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

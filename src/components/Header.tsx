@@ -32,7 +32,9 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="font-bold text-xl text-primary">HEPARAMOTORES</div>
-            <div className="hidden sm:block text-sm text-muted-foreground">Моторы & парамоторы</div>
+            <div className="hidden sm:block text-sm text-muted-foreground">Engienes
+Frames
+Paramotors</div>
           </Link>
 
           {/* Desktop Navigation */}

@@ -13,6 +13,12 @@ const Header = () => {
     name: "Двигатели",
     href: "/engines"
   }, {
+    name: "Парамоторы",
+    href: "/paramotors"
+  }, {
+    name: "Рамы",
+    href: "/frames"
+  }, {
     name: "Сервис",
     href: "/service"
   }, {
@@ -32,9 +38,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="font-bold text-xl text-primary">HEPARAMOTORES</div>
-            <div className="hidden sm:block text-sm text-muted-foreground">Engienes
-Frames
-Paramotors</div>
+            <span className="hidden sm:block text-sm text-muted-foreground">Engines & Paramotors</span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -7,6 +7,8 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Engines from "./pages/Engines";
 import EngineDetail from "./pages/EngineDetail";
+import Paramotors from "./pages/Paramotors";
+import Frames from "./pages/Frames";
 import Service from "./pages/Service";
 import ShippingWarranty from "./pages/ShippingWarranty";
 import About from "./pages/About";
@@ -32,7 +34,10 @@ const App = () => (
             <Route path="/engines/mv1" element={<EngineDetail model="mv1" />} />
             <Route path="/engines/mv2" element={<EngineDetail model="mv2" />} />
             <Route path="/engines/rs206" element={<EngineDetail model="rs206" />} />
+            <Route path="/engines/rs185" element={<EngineDetail model="rs185" />} />
             <Route path="/engines/raptor-277" element={<EngineDetail model="raptor-277" />} />
+            <Route path="/paramotors" element={<Paramotors />} />
+            <Route path="/frames" element={<Frames />} />
             <Route path="/service" element={<Service />} />
             <Route path="/shipping-warranty" element={<ShippingWarranty />} />
             <Route path="/about" element={<About />} />

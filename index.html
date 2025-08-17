@@ -1,24 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HEPARAMOTORES - Официальный дилер двигателей H&E в России</title>
-    <meta name="description" content="HEPARAMOTORES - официальный дилер двигателей H&E в России. MVL, MV1, MV2, RS206, Raptor 277. Поставка, установка, сервис и ЗИП." />
-    <meta name="author" content="HEPARAMOTORES" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta property="og:title" content="HEPARAMOTORES - Официальный дилер двигателей H&E в России" />
-    <meta property="og:description" content="HEPARAMOTORES - официальный дилер двигателей H&E в России. MVL, MV1, MV2, RS206, Raptor 277. Поставка, установка, сервис и ЗИП." />
+    <title>VENTURY — официальный дилер двигателей H&E в России</title>
+    <meta name="description" content="HEPARAMOTORES — официальный дилер двигателей H&E в России. MVL, MV1, MV2, RS206, Raptor 277. Поставка, установка, сервис и ЗИП." />
+
+    <!-- Canonical + hreflang -->
+    <link rel="canonical" href="https://heparamotor.ru/" />
+    <link rel="alternate" hreflang="ru" href="https://heparamotor.ru/" />
+
+    <!-- Favicon / PWA -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#ff6a00" />
+
+    <!-- Preconnect (если используешь шрифты/ресурсы с CDN) -->
+    <!--<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />-->
+    <!--<link rel="preconnect" href="https://fonts.googleapis.com" />-->
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="ru_RU" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:title" content="VENTURY — официальный дилер двигателей H&E в России" />
+    <meta property="og:description" content="Поставка, установка, сервис и ЗИП. MVL, MV1, MV2, RS206, Raptor 277." />
+    <meta property="og:url" content="https://heparamotor.ru/" />
+    <meta property="og:site_name" content="HEPARAMOTORES" />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    <meta name="twitter:title" content="VENTURY — официальный дилер двигателей H&E в России" />
+    <meta name="twitter:description" content="Поставка, установка, сервис и ЗИП. MVL, MV1, MV2, RS206, Raptor 277." />
+    <meta name="twitter:image" content="/og-image.jpg" />
 
+    <!-- Organization JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "HEPARAMOTORES",
+      "url": "https://heparamotor.ru/",
+      "logo": "https://heparamotor.ru/apple-touch-icon.png",
+      "sameAs": [
+        "https://t.me/...", 
+        "https://vk.com/...", 
+        "https://instagram.com/..."
+      ],
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+7-900-000-00-00",
+        "contactType": "customer service",
+        "areaServed": "RU",
+        "availableLanguage": ["ru"]
+      }]
+    }
+    </script>
+
+    <!-- Vite entry -->
+    <script type="module" src="/src/main.tsx"></script>
+  </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

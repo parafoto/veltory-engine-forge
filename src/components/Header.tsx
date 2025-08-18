@@ -28,6 +28,9 @@ const Header = () => {
     name: "Блог",
     href: "/blog"
   }, {
+    name: "Конфигуратор",
+    href: "/configurator"
+  }, {
     name: "Контакты",
     href: "/contacts"
   }];

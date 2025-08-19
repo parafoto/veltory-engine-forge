@@ -2,52 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ЕДИНАЯ ТЕМА VENTURY ДЛЯ ВСЕГО САЙТА */
+/* =========
+   Глобальные CSS‑переменные под Tailwind (единая тема Ventury)
+   ========= */
+:root {
+  /* Цвета Ventury */
+  --background: #0f1b2b;           /* тёмно-синий фон */
+  --foreground: #e8edf5;           /* основной текст (очень светлый) */
+
+  --card:       #112035;           /* подложки/карточки */
+  --popover:    #112035;
+
+  --muted:      #94a3b8;           /* вторичный текст */
+  --border:     #22314a;           /* линии/рамки */
+  --input:      #22314a;
+
+  --primary:            #ff7a1a;   /* фирменный оранжевый */
+  --primary-foreground: #0f1b2b;   /* текст на оранжевом (контраст) */
+
+  --secondary:            #14233a; /* подсекции/хедер/футер акцент */
+  --secondary-foreground: #e8edf5;
+
+  --accent:            #ff7a1a;    /* для hover/линков/иконок */
+  --accent-foreground: #0f1b2b;
+
+  --destructive:            #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --ring:   #ff7a1a;
+  --radius: 12px;
+}
+
+/* Если нужна поддержка светлой темы в будущем:
+@media (prefers-color-scheme: light) { ... }
+*/
+
+/* БАЗА: фон/текст по умолчанию */
 @layer base {
-  :root {
-    /* Фон/текст */
-    --background: 222 20% 8%;   /* тёмный фон (почти чёрный с синим подтоном) */
-    --foreground: 0 0% 98%;     /* светлый текст */
-
-    /* Карточки/поповеры */
-    --card: 222 20% 10%;
-    --card-foreground: 0 0% 98%;
-    --popover: 222 20% 10%;
-    --popover-foreground: 0 0% 98%;
-
-    /* Бренд Ventury (оранжевый) */
-    --primary: 25 100% 54%;          /* #FF7A00 ± */
-    --primary-foreground: 0 0% 10%;
-
-    /* Вторичные/мутед/акцент */
-    --secondary: 223 18% 18%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 223 18% 18%;
-    --muted-foreground: 220 9% 65%;
-    --accent: 40 100% 60%;
-    --accent-foreground: 0 0% 10%;
-
-    /* Остальное */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 222 18% 22%;
-    --input: 222 18% 22%;
-    --ring: 25 100% 54%;
-
-    --radius: 0.5rem;
+  * {
+    @apply border-border;
+  }
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
   }
 
-  /* Базовое применение темы — на весь сайт */
-  * { @apply border-border; }
-  body { @apply bg-background text-foreground; }
-  a { @apply text-primary; }
-  button, .btn { @apply bg-primary text-primary-foreground; }
+  /* Ссылки — аккуратный фирменный акцент */
+  a {
+    color: var(--primary);
+  }
+  a:hover {
+    color: #ffa45d;
+  }
+
+  /* Заголовки — немного светлее и контрастнее */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground;
+  }
 }
 
-/* Дополнительно (по желанию): единые стили ссылок/кнопок в hover/focus */
-/*
+/* ПАРА ГОТОВЫХ УТИЛИТ (по желанию использовать в шаблонах) */
 @layer components {
-  .btn:hover { @apply opacity-90; }
-  a:hover { @apply underline; }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg
+           bg-primary text-[color:var(--primary-foreground)]
+           px-5 py-2.5 font-medium shadow-sm transition
+           hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-ring;
+  }
+
+  .card {
+    @apply rounded-lg bg-card/80 backdrop-blur border border-border;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full bg-secondary/80 px-3 py-1 text-sm;
+  }
 }
-*/
+
+/* Небольшие твики сетки контейнера (если используются utility-классы) */
+.container {
+  @apply mx-auto px-4;
+  max-width: 1200px;
+}

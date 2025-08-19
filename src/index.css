@@ -1,88 +1,83 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* =========
-   Глобальные CSS‑переменные под Tailwind (единая тема Ventury)
-   ========= */
 :root {
-  /* Цвета Ventury */
-  --background: #0f1b2b;           /* тёмно-синий фон */
-  --foreground: #e8edf5;           /* основной текст (очень светлый) */
+  --background: #0d1522;   /* глубокий фон */
+  --foreground: #e8edf5;
 
-  --card:       #112035;           /* подложки/карточки */
-  --popover:    #112035;
+  --card: #101a2b;         /* карточки чуть светлее фона */
+  --card-foreground: #e8edf5;
 
-  --muted:      #94a3b8;           /* вторичный текст */
-  --border:     #22314a;           /* линии/рамки */
-  --input:      #22314a;
+  --popover: #101a2b;
+  --popover-foreground: #e8edf5;
 
-  --primary:            #ff7a1a;   /* фирменный оранжевый */
-  --primary-foreground: #0f1b2b;   /* текст на оранжевом (контраст) */
+  --primary: #ff6600;      /* оранжевый акцент */
+  --primary-foreground: #ffffff;
 
-  --secondary:            #14233a; /* подсекции/хедер/футер акцент */
+  --secondary: #1a2535;
   --secondary-foreground: #e8edf5;
 
-  --accent:            #ff7a1a;    /* для hover/линков/иконок */
-  --accent-foreground: #0f1b2b;
+  --muted: #1a2535;
+  --muted-foreground: #b0b8c9;
 
-  --destructive:            #ef4444;
+  --accent: #ff6600;
+  --accent-foreground: #ffffff;
+
+  --destructive: #dc2626;
   --destructive-foreground: #ffffff;
 
-  --ring:   #ff7a1a;
-  --radius: 12px;
+  --border: #1f2a3a;
+  --input: #1f2a3a;
+  --ring: #ff6600;
+
+  --radius: 0.5rem;
 }
 
-/* Если нужна поддержка светлой темы в будущем:
-@media (prefers-color-scheme: light) { ... }
-*/
-
-/* БАЗА: фон/текст по умолчанию */
-@layer base {
-  * {
-    @apply border-border;
-  }
-  html, body, #root {
-    height: 100%;
-  }
-  body {
-    @apply bg-background text-foreground antialiased;
-  }
-
-  /* Ссылки — аккуратный фирменный акцент */
-  a {
-    color: var(--primary);
-  }
-  a:hover {
-    color: #ffa45d;
-  }
-
-  /* Заголовки — немного светлее и контрастнее */
-  h1, h2, h3, h4, h5, h6 {
-    @apply text-foreground;
-  }
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* ПАРА ГОТОВЫХ УТИЛИТ (по желанию использовать в шаблонах) */
-@layer components {
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg
-           bg-primary text-[color:var(--primary-foreground)]
-           px-5 py-2.5 font-medium shadow-sm transition
-           hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-ring;
-  }
-
-  .card {
-    @apply rounded-lg bg-card/80 backdrop-blur border border-border;
-  }
-
-  .chip {
-    @apply inline-flex items-center rounded-full bg-secondary/80 px-3 py-1 text-sm;
-  }
+a {
+  color: var(--primary);
+  text-decoration: none;
 }
 
-/* Небольшие твики сетки контейнера (если используются utility-классы) */
-.container {
-  @apply mx-auto px-4;
-  max-width: 1200px;
+a:hover {
+  color: var(--accent);
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--accent);
+}
+
+.card {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  padding: 1rem;
+}
+
+.footer {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  padding: 1rem;
+  text-align: center;
 }

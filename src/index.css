@@ -65,12 +65,12 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 48%;
   }
+}
 
-  /* глобальные базовые утилиты */
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+/* Локальные стили ТОЛЬКО для конфигуратора */
+.configurator-page * {
+  @apply border-border;
+}
+.configurator-page {
+  @apply bg-background text-foreground;
 }

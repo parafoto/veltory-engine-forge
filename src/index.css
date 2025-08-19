@@ -2,116 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Оранжевая цветовая схема сайта */
+/* ЕДИНАЯ ТЕМА VENTURY ДЛЯ ВСЕГО САЙТА */
 @layer base {
   :root {
-    /* Основная оранжевая палитра */
-    --orange-50: 255 247 237;
-    --orange-100: 255 237 213;
-    --orange-200: 254 215 170;
-    --orange-300: 253 186 116;
-    --orange-400: 251 146 60;
-    --orange-500: 249 115 22;
-    --orange-600: 234 88 12;
-    --orange-700: 194 65 14;
-    --orange-800: 154 52 18;
-    --orange-900: 124 45 18;
+    /* Фон/текст */
+    --background: 222 20% 8%;   /* тёмный фон (почти чёрный с синим подтоном) */
+    --foreground: 0 0% 98%;     /* светлый текст */
 
-    /* Основные цвета сайта */
-    --primary: var(--orange-600);
-    --primary-foreground: 255 255 255;
-    --accent: var(--orange-500);
-    --accent-foreground: 255 255 255;
-    
-    /* CTA кнопка */
-    --cta: var(--orange-500);
-    --cta-foreground: 255 255 255;
-    --cta-hover: var(--orange-600);
-    
-    /* Нейтральные цвета */
-    --background: 255 255 255;
-    --foreground: 15 23 42;
-    --muted: 248 250 252;
-    --muted-foreground: 100 116 139;
-    --border: 226 232 240;
-    --success: 34 197 94;
+    /* Карточки/поповеры */
+    --card: 222 20% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 20% 10%;
+    --popover-foreground: 0 0% 98%;
 
-    /* Градиенты */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--orange-600)), hsl(var(--orange-500)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--orange-500)), hsl(var(--orange-400)));
-    
-    /* Тени */
-    --shadow-subtle: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-    --shadow-large: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    --shadow-cta: 0 4px 14px 0 rgb(249 115 22 / 0.39);
+    /* Бренд Ventury (оранжевый) */
+    --primary: 25 100% 54%;          /* #FF7A00 ± */
+    --primary-foreground: 0 0% 10%;
+
+    /* Вторичные/мутед/акцент */
+    --secondary: 223 18% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 223 18% 18%;
+    --muted-foreground: 220 9% 65%;
+    --accent: 40 100% 60%;
+    --accent-foreground: 0 0% 10%;
+
+    /* Остальное */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 18% 22%;
+    --input: 222 18% 22%;
+    --ring: 25 100% 54%;
+
+    --radius: 0.5rem;
   }
 
-  * {
-    border-color: hsl(var(--border));
-  }
-  
-  body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
-  }
+  /* Базовое применение темы — на весь сайт */
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+  a { @apply text-primary; }
+  button, .btn { @apply bg-primary text-primary-foreground; }
 }
 
-/* Утилиты для градиентов */
-@layer utilities {
-  .bg-gradient-hero {
-    background: var(--gradient-hero);
-  }
-  
-  .bg-gradient-accent {
-    background: var(--gradient-accent);
-  }
-  
-  .shadow-subtle {
-    box-shadow: var(--shadow-subtle);
-  }
-  
-  .shadow-large {
-    box-shadow: var(--shadow-large);
-  }
-  
-  .shadow-cta {
-    box-shadow: var(--shadow-cta);
-  }
-  
-  .text-success {
-    color: hsl(var(--success));
-  }
+/* Дополнительно (по желанию): единые стили ссылок/кнопок в hover/focus */
+/*
+@layer components {
+  .btn:hover { @apply opacity-90; }
+  a:hover { @apply underline; }
 }
-
-/* Токены темы для конфигуратора (совместимы с shadcn/ui) */
-.configurator-page {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
-  --primary: 221.2 83.2% 53.3%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 221.2 83.2% 53.3%;
-  --radius: 0.5rem;
-}
-
-.configurator-page * {
-  border-color: hsl(var(--border));
-}
-
-.configurator-page {
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
-}
+*/

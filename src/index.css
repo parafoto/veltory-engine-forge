@@ -2,43 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ==== Ventury Theme (safe) ==== */
-/* ГЛАВНЫЕ ТОКЕНЫ — тёмно‑синий фон + оранжевый акцент */
+/* ==== Light Theme (default) ==== */
 :root {
   /* База */
-  --background: #0d1522;      /* глубокий тёмно‑синий */
-  --foreground: #e8edf5;      /* светлый текст */
+  --background: 0 0% 100%;          /* белый фон */
+  --foreground: 222.2 84% 4.9%;     /* темный текст */
 
   /* Поверхности */
-  --card: #101a2b;
-  --card-foreground: #e8edf5;
-  --popover: #101a2b;
-  --popover-foreground: #e8edf5;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
 
   /* Акценты */
-  --primary: #ff6600;         /* оранжевый Ventury */
-  --primary-foreground: #ffffff;
-  --accent: #ff6600;
-  --accent-foreground: #ffffff;
+  --primary: 221.2 83.2% 53.3%;     /* синий */
+  --primary-foreground: 210 40% 98%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222.2 84% 4.9%;
 
   /* Вспомогательные */
-  --secondary: #1a2535;
-  --secondary-foreground: #e8edf5;
-  --muted: #1a2535;
-  --muted-foreground: #b0b8c9;
-  --destructive: #dc2626;
-  --destructive-foreground: #ffffff;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
 
   /* Рамки/инпуты/кольцо фокуса */
-  --border: #1f2a3a;
-  --input: #1f2a3a;
-  --ring: #ff6600;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221.2 83.2% 53.3%;
 
   --radius: 0.5rem;
 }
 
-/* Не меняем глобальные теги! Только базовая заливка через Tailwind‑утилиты */
 @layer base {
-  html { color-scheme: dark; }
+  html { color-scheme: light; }
   body { @apply bg-background text-foreground antialiased; }
 }

@@ -1,28 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==== Ventury Theme (safe) ==== */
+/* ГЛАВНЫЕ ТОКЕНЫ — тёмно‑синий фон + оранжевый акцент */
 :root {
-  --background: #0d1522;   /* глубокий фон */
-  --foreground: #e8edf5;
+  /* База */
+  --background: #0d1522;      /* глубокий тёмно‑синий */
+  --foreground: #e8edf5;      /* светлый текст */
 
-  --card: #101a2b;         /* карточки чуть светлее фона */
+  /* Поверхности */
+  --card: #101a2b;
   --card-foreground: #e8edf5;
-
   --popover: #101a2b;
   --popover-foreground: #e8edf5;
 
-  --primary: #ff6600;      /* оранжевый акцент */
+  /* Акценты */
+  --primary: #ff6600;         /* оранжевый Ventury */
   --primary-foreground: #ffffff;
-
-  --secondary: #1a2535;
-  --secondary-foreground: #e8edf5;
-
-  --muted: #1a2535;
-  --muted-foreground: #b0b8c9;
-
   --accent: #ff6600;
   --accent-foreground: #ffffff;
 
+  /* Вспомогательные */
+  --secondary: #1a2535;
+  --secondary-foreground: #e8edf5;
+  --muted: #1a2535;
+  --muted-foreground: #b0b8c9;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
 
+  /* Рамки/инпуты/кольцо фокуса */
   --border: #1f2a3a;
   --input: #1f2a3a;
   --ring: #ff6600;
@@ -30,54 +37,8 @@
   --radius: 0.5rem;
 }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  color: var(--primary);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--accent);
-}
-
-button {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-button:hover {
-  background-color: var(--accent);
-}
-
-.card {
-  background-color: var(--card);
-  color: var(--card-foreground);
-  border-radius: var(--radius);
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.header {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
-  padding: 1rem;
-}
-
-.footer {
-  background-color: var(--secondary);
-  color: var(--secondary-foreground);
-  padding: 1rem;
-  text-align: center;
+/* Не меняем глобальные теги! Только базовая заливка через Tailwind‑утилиты */
+@layer base {
+  html { color-scheme: dark; }
+  body { @apply bg-background text-foreground antialiased; }
 }

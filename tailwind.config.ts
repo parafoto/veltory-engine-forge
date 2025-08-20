@@ -13,7 +13,7 @@ export default {
         'veltory-orange-dark': 'hsl(var(--veltory-orange-dark))',
         'veltory-gray': 'hsl(var(--veltory-gray))',
         'veltory-bg-dark': 'hsl(var(--veltory-bg-dark))',
-        'veltory-black': 'hsl(var(--veltory-black))',
+        'veltory-dark': 'hsl(var(--veltory-dark))',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -1,65 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VELTORY — официальный дилер H&E в России</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>VELTORY — официальный дилер H&E в России</title>
 
-  <!-- Основной стиль -->
-  <link rel="stylesheet" href="/theme-veltory.css">
-  <!-- Можно оставить и style.css, если он используется для сетки/разметки -->
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="/">Главная</a></li>
-        <li><a href="/engines">Двигатели</a></li>
-        <li><a href="/paramotors">Парамоторы</a></li>
-        <li><a href="/frames">Рамы</a></li>
-        <li><a href="/service">Сервис</a></li>
-        <li><a href="/delivery">Доставка и гарантия</a></li>
-        <li><a href="/blog">Блог</a></li>
-        <li><a href="/configurator">Конфигуратор</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Фирменные цвета/переменные темы -->
+    <link rel="stylesheet" href="/theme-veltory.css" />
+    <!-- Если используется базовая сетка/утилиты — оставляем -->
+    <link rel="stylesheet" href="/style.css" />
 
-  <main>
-    <section>
-      <h1>Двигатели для парамоторов</h1>
-      <p>MV1, MV2, RS206, RS185, Raptor 277. Поставка, установка на рамы, сервис и гарантия по РФ.</p>
+    <!-- Автотема: localStorage -> системная -->
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem('theme');
+          if (saved === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else if (saved === 'light') {
+            document.documentElement.classList.remove('dark');
+          } else if (
+            window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches
+          ) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (_) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- ВАЖНО: никакого HTML-контента здесь.
+         Всё рендерит React из /src через этот контейнер. -->
+    <div id="root"></div>
+    <noscript>Для работы сайта нужен JavaScript.</noscript>
 
-      <div>
-        <a class="btn btn-primary" href="/engines">Подобрать двигатель</a>
-        <a class="btn" href="/contact">Получить предложение</a>
-      </div>
-    </section>
-
-    <section>
-      <h2>Линейка двигателей</h2>
-      <p class="muted">Подберем двигатель под ваш вес, крыло и стиль полётов.</p>
-      <!-- Здесь можно оставить список/карточки моделей -->
-    </section>
-  </main>
-
-  <footer>
-    <p class="muted">© 2025 VELTORY. Официальный дилер H&E в России</p>
-  </footer>
-
-  <!-- Скрипт автопереключения темы -->
-  <script>
-    (function () {
-      const saved = localStorage.getItem('theme');
-      if (saved === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else if (saved === 'light') {
-        document.documentElement.classList.remove('dark');
-      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark');
-      }
-    })();
-  </script>
-</body>
+    <!-- Точка входа Vite/React -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

@@ -1,0 +1,80 @@
+/* =======================================================================
+   VELTORY Theme — только цвета, НИ ОДНОГО правила, меняющего разметку.
+   Подключается поверх существующего layout‑CSS.
+   ======================================================================= */
+
+/* Светлая тема по умолчанию */
+:root {
+  --v-bg:           #ffffff;
+  --v-fg:           #0e1623;
+  --v-muted:        #66758a;
+  --v-card:         #f6f8fb;
+  --v-border:       #dfe6ee;
+
+  --v-primary:      #ff7a1a; /* оранжевый */
+  --v-primary-ink:  #0f1b2b; /* текст на оранжевой кнопке */
+
+  --v-link:         #ff7a1a;
+  --v-link-hover:   #e86e14;
+}
+
+/* Тёмная тема — активируется классом .dark на <html> или <body> */
+.dark {
+  --v-bg:           #0d1522; /* тёмно‑синий Navy */
+  --v-fg:           #e8edf5;
+  --v-muted:        #aab7c8;
+  --v-card:         #101a2b;
+  --v-border:       #1f2a3a;
+
+  --v-primary:      #ff7a1a;
+  --v-primary-ink:  #0f1b2b;
+
+  --v-link:         #ff9a50;
+  --v-link-hover:   #ff7a1a;
+}
+
+/* Применяем цвета — без вмешательства в сетки/отступы/display */
+body {
+  background: var(--v-bg);
+  color: var(--v-fg);
+}
+
+/* Ссылки */
+a { color: var(--v-link); }
+a:hover { color: var(--v-link-hover); }
+
+/* Карточные границы (если есть соответствующие классы) */
+.card, .panel, .box, .tile, .engine-card, .article-card {
+  border-color: var(--v-border);
+  background: var(--v-card);
+}
+
+/* Кнопки — только подкрашиваем, не меняем padding/границы/радиусы */
+.btn-primary, .button-primary, .button--primary,
+[class*="btn"][class*="primary"], button.primary {
+  background: var(--v-primary) !important;
+  color: var(--v-primary-ink) !important;
+  border-color: color-mix(in oklab, var(--v-primary), black 12%) !important;
+}
+
+/* Прозрачные/вторичные */
+.btn-ghost, .button-ghost, .button--ghost,
+[class*="btn"][class*="ghost"] {
+  background: transparent !important;
+  color: var(--v-fg) !important;
+  border-color: var(--v-border) !important;
+}
+
+/* Инпуты — только цвета */
+input, select, textarea {
+  background: var(--v-card);
+  color: var(--v-fg);
+  border-color: var(--v-border);
+}
+input::placeholder, textarea::placeholder {
+  color: color-mix(in oklab, var(--v-fg), transparent 45%);
+}
+input:focus, select:focus, textarea:focus {
+  border-color: color-mix(in oklab, var(--v-primary), black 12%);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--v-primary), transparent 75%);
+}

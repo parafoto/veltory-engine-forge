@@ -14,6 +14,7 @@ const Configurator = () => {
     engines: [
       {"id":"mvl","name":"MVL","price":0},
       {"id":"mv1","name":"MV1","price":0},
+      {"id":"rs185","name":"RS 185","price":0},
       {"id":"mv2","name":"MV2","price":0},
       {"id":"rs206","name":"RS 206","price":0},
       {"id":"raptor277","name":"Raptor 277","price":0}
@@ -29,6 +30,7 @@ const Configurator = () => {
     recs: [
       {"engine":"mvl","frames":["es_f1","ego3"]},
       {"engine":"mv1","frames":["es_f1","es_f2","ego3","skynet3"]},
+      {"engine":"rs185","frames":["es_f2","ego3","skynet3"]},
       {"engine":"mv2","frames":["es_f2","es_f3","skynet3","skynet4"]},
       {"engine":"rs206","frames":["es_f3","skynet3","skynet4"]},
       {"engine":"raptor277","frames":["es_f3","skynet4"]}
@@ -39,7 +41,7 @@ const Configurator = () => {
       {"id":"cage_bag","name":"Сумка для кожуха","price":0}
     ],
     pricing: {
-      engines: {"mvl":3500,"mv1":4200,"mv2":5600,"rs206":6400,"raptor277":6900},
+      engines: {"mvl":3500,"mv1":4200,"rs185":5200,"mv2":5600,"rs206":6400,"raptor277":6900},
       frames: {"es_f1":1600,"es_f2":1900,"es_f3":2100,"ego3":1200,"skynet3":1400,"skynet4":1700},
       extras: {"starter":450,"prop_carbon":600,"cage_bag":90},
       currency:"€"
@@ -121,7 +123,7 @@ const Configurator = () => {
                   Шаг 1. Двигатель
                 </CardTitle>
                 <CardDescription>
-                  Выберите двигатель (по порядку: MVL, MV1, MV2, RS 206, Raptor 277)
+                  Выберите двигатель (по порядку: MVL, MV1, RS 185, MV2, RS 206, Raptor 277)
                 </CardDescription>
               </CardHeader>
               <CardContent>

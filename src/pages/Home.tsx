@@ -35,6 +35,12 @@ const Home = () => {
     weight: "8.5 кг",
     thrust: "105 Н",
     link: "/engines/raptor-277"
+  }, {
+    name: "RS185",
+    description: "Компактный двигатель среднего класса",
+    weight: "Уточняется",
+    thrust: "Уточняется",
+    link: "/engines/rs185"
   }];
   const advantages = [{
     icon: Zap,
@@ -92,7 +98,7 @@ const Home = () => {
               Официальный дилер H&E в России
             </Badge>
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">Двигатели для парамоторов</h1>
-            <p className="text-xl lg:text-2xl text-primary-foreground/90 mb-8 leading-relaxed">MVL, MV1, MV2, RS206, Raptor 277. Поставка, установка на рамы, сервис в РФ.</p>
+            <p className="text-xl lg:text-2xl text-primary-foreground/90 mb-8 leading-relaxed">MVL, MV1, MV2, RS206, RS185, Raptor 277. Поставка, установка на рамы, сервис в РФ.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="cta" size="lg" asChild>
                 <Link to="/engines">Подобрать двигатель</Link>

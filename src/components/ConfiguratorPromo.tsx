@@ -23,7 +23,7 @@ const ConfiguratorPromo = () => {
             <Settings className="w-12 h-12 text-accent mx-auto mb-3" />
             <h4 className="font-semibold mb-2">Выбор двигателя</h4>
             <p className="text-sm text-muted-foreground">
-              MVL, MV1, MV2, RS206, Raptor 277
+              MVL, MV1, RS185, MV2, RS206, Raptor 277
             </p>
           </div>
           <div className="text-center">

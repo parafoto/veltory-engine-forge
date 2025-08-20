@@ -23,7 +23,7 @@ const Frames = () => {
         "Проверенная надежность",
         "Широкая совместимость"
       ],
-      compatibility: ["MVL", "MV1", "MV2", "RS206"],
+      compatibility: ["MVL", "MV1", "MV2", "RS206", "RS185"],
       pros: [
         "Лучшее соотношение цена/качество",
         "Легкость обработки и ремонта",
@@ -46,7 +46,7 @@ const Frames = () => {
         "Стойкость к деформации",
         "Профессиональное качество"
       ],
-      compatibility: ["MV1", "MV2", "RS206", "Raptor 277"],
+      compatibility: ["MV1", "MV2", "RS206", "RS185", "Raptor 277"],
       pros: [
         "Исключительная прочность",
         "Долговечность конструкции",
@@ -69,7 +69,7 @@ const Frames = () => {
         "Биосовместимость",
         "Эксклюзивность"
       ],
-      compatibility: ["MV2", "RS206", "Raptor 277"],
+      compatibility: ["MV2", "RS206", "RS185", "Raptor 277"],
       pros: [
         "Наименьший вес в категории",
         "Превосходная прочность",
@@ -214,7 +214,7 @@ const Frames = () => {
                   </div>
                 </div>
                 <div className="flex items-center justify-between p-3 bg-background rounded-lg">
-                  <span className="font-medium">RS206</span>
+                  <span className="font-medium">RS206, RS185</span>
                   <div className="flex gap-1">
                     <Badge variant="secondary">Сталь</Badge>
                     <Badge variant="secondary">Титан</Badge>

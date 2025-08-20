@@ -1,3 +1,221 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ========================================================================
+   VELTORY THEME — Dark Navy + Orange
+   Ничего не ломаем в верстке: только цвета, границы и состояния.
+   ===================================================================== */
+
+/* ---------- Цветовые переменные ---------- */
+:root {
+  /* Светлая тема (по умолчанию) */
+  --bg:            #ffffff;
+  --fg:            #0e1623;  /* глубокий графит/индиго */
+  --muted:         #66758a;
+  --card:          #f6f8fb;
+  --border:        #dfe6ee;
+
+  --primary:       #ff7a1a;  /* фирменный оранжевый */
+  --primary-ink:   #0f1b2b;  /* текст на оранжевой кнопке */
+
+  --link:          #ff7a1a;
+  --link-hover:    #e86e14;
+
+  --shadow:        0 6px 24px rgba(14,22,35,0.08);
+}
+
+.dark {
+  /* Тёмная тема */
+  --bg:            #0d1522;  /* тёмно-синий Navy */
+  --fg:            #e8edf5;
+  --muted:         #aab7c8;
+  --card:          #101a2b;
+  --border:        #1f2a3a;
+
+  --primary:       #ff7a1a;
+  --primary-ink:   #0f1b2b;
+
+  --link:          #ff9a50;
+  --link-hover:    #ff7a1a;
+
+  --shadow:        0 6px 24px rgba(0,0,0,0.25);
+}
+
+/* ---------- Базовые правила (без изменений вёрстки) ---------- */
+html { color-scheme: light dark; }
+html, body { height: 100%; }
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background .25s ease, color .25s ease;
+}
+
+/* Заголовки остаются контрастными */
+h1, h2, h3, h4, h5, h6 { color: var(--fg); }
+p, small, li { color: color-mix(in oklab, var(--fg), transparent 20%); }
+
+/* Ссылки */
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+
+/* Разделители/границы, применятся к любым обрамлениям */
+hr, .divider { border: none; height: 1px; background: var(--border); }
+
+/* ---------- Шапка/Футер (если такие элементы есть) ---------- */
+header, .site-header {
+  background: color-mix(in oklab, var(--bg), var(--fg) 3%);
+  border-bottom: 1px solid var(--border);
+}
+footer, .site-footer {
+  background: color-mix(in oklab, var(--bg), var(--fg) 2%);
+  border-top: 1px solid var(--border);
+  color: color-mix(in oklab, var(--fg), transparent 10%);
+}
+
+/* Навигация (не меняем структуру — только цвета) */
+nav a, .nav a, .menu a, .navbar a {
+  color: color-mix(in oklab, var(--fg), transparent 10%);
+  opacity: .95;
+}
+nav a:hover, .nav a:hover, .menu a:hover, .navbar a:hover {
+  color: var(--fg);
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* ---------- Карточки/панели/блоки ---------- */
+/* Подхватывает большинство «карточных» классов, не трогая сетку */
+.card, .panel, .box, .tile, .faq-item, .feature, .engine-card, .article-card, .hero {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+/* Лёгкая подложка для «героя»/больших блоков, если класс hero присутствует */
+.hero { background: color-mix(in oklab, var(--card), var(--fg) 2%); }
+
+/* ---------- Кнопки (подхватываем максимально широко) ---------- */
+button,
+.btn,
+[class*="button"],
+input[type="button"],
+input[type="submit"] {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter .15s ease, transform .04s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+button:hover,
+.btn:hover,
+[class*="button"]:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  filter: brightness(1.05);
+}
+
+/* «Оранжевая» (primary) — ищем распространённые варианты классов */
+.btn-primary,
+.button-primary,
+.button--primary,
+[class*="primary"][class*="btn"],
+[class*="btn"][class*="primary"] {
+  background: var(--primary);
+  color: var(--primary-ink);
+  border-color: color-mix(in oklab, var(--primary), black 12%);
+}
+.btn-primary:hover,
+.button-primary:hover,
+.button--primary:hover,
+[class*="primary"][class*="btn"]:hover,
+[class*="btn"][class*="primary"]:hover {
+  filter: brightness(1.06);
+}
+
+/* «Прозрачная»/вторичная */
+.btn-ghost,
+.button-ghost,
+.button--ghost,
+[class*="ghost"][class*="btn"] {
+  background: transparent;
+  color: var(--fg);
+  border-color: var(--border);
+}
+
+/* Ссылки-«кнопки» */
+.btn-link, .button-link {
+  background: transparent !important;
+  border: none !important;
+  color: var(--link) !important;
+  padding: 0 !important;
+}
+
+/* ---------- Формы ---------- */
+input, select, textarea {
+  background: var(--card);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color .2s ease, background .2s ease, color .2s ease;
+}
+input::placeholder, textarea::placeholder {
+  color: color-mix(in oklab, var(--fg), transparent 45%);
+}
+input:focus, select:focus, textarea:focus {
+  border-color: color-mix(in oklab, var(--primary), black 12%);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary), transparent 75%);
+}
+
+/* Таблички/списки характеристик выглядят контрастно и аккуратно */
+ul.specs, .specs ul, .spec-list, .features-list {
+  list-style: none;
+  padding-left: 0;
+}
+ul.specs li, .specs li, .spec-list li, .features-list li {
+  padding: 4px 0;
+  border-bottom: 1px dashed color-mix(in oklab, var(--border), var(--fg) 8%);
+}
+ul.specs li:last-child, .specs li:last-child, .spec-list li:last-child, .features-list li:last-child {
+  border-bottom: none;
+}
+
+/* Бейджи/чипы, если используются */
+.badge, .chip, .tag {
+  background: color-mix(in oklab, var(--primary), transparent 88%);
+  color: color-mix(in oklab, var(--primary), black 60%);
+  border: 1px solid color-mix(in oklab, var(--primary), black 15%);
+  border-radius: 8px;
+  padding: 2px 8px;
+  font-weight: 600;
+}
+
+/* ---------- Ховеры карточек (если нужны лёгкие акценты) ---------- */
+.card:hover, .panel:hover, .tile:hover, .engine-card:hover, .article-card:hover {
+  border-color: color-mix(in oklab, var(--primary), var(--border) 60%);
+}
+
+/* ---------- Утилиты (не ломают сетку) ---------- */
+.text-muted { color: var(--muted) !important; }
+.border        { border: 1px solid var(--border) !important; }
+.border-top    { border-top: 1px solid var(--border) !important; }
+.border-bottom { border-bottom: 1px solid var(--border) !important; }
+.rounded       { border-radius: 12px !important; }
+.bg-card       { background: var(--card) !important; }
+.bg-base       { background: var(--bg) !important; }
+.shadow        { box-shadow: var(--shadow) !important; }
+
+/* Плавные переходы для всего, что меняет цвет при теме */
+header, footer, nav a, .card, .panel, .box, .tile, .faq-item, .feature,
+button, .btn, [class*="button"], input, select, textarea {
+  transition: background .20s ease, color .20s ease, border-color .20s ease, box-shadow .20s ease;
+}

@@ -80,7 +80,6 @@ const LeadForm = ({ className = "" }: LeadFormProps) => {
     "MV1",
     "MV2", 
     "RS206",
-    "RS185",
     "Raptor 277",
     "Не определился"
   ];

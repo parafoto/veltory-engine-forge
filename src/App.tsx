@@ -35,7 +35,6 @@ const App = () => (
             <Route path="/engines/mv1" element={<EngineDetail model="mv1" />} />
             <Route path="/engines/mv2" element={<EngineDetail model="mv2" />} />
             <Route path="/engines/rs206" element={<EngineDetail model="rs206" />} />
-            <Route path="/engines/rs185" element={<EngineDetail model="rs185" />} />
             <Route path="/engines/raptor-277" element={<EngineDetail model="raptor-277" />} />
             <Route path="/paramotors" element={<Paramotors />} />
             <Route path="/frames" element={<Frames />} />

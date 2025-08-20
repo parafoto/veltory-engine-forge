@@ -1,3 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    /* VELTORY Brand Colors */
+    --veltory-orange: 30 100% 50%;          /* #FF8000 */
+    --veltory-orange-dark: 24 100% 45%;     /* #E45A00 */
+    --veltory-gray: 0 0% 85%;               /* #D9D9D9 */
+    --veltory-bg-dark: 0 0% 10%;            /* #1A1A1A */
+    --veltory-black: 0 0% 0%;               /* #000000 */
+
+    /* Semantic tokens - Light theme */
+    --background: 0 0% 100%;
+    --foreground: var(--veltory-black);
+    --muted: 0 0% 45%;
+    --muted-foreground: 0 0% 45%;
+    --card: 0 0% 100%;
+    --card-foreground: var(--veltory-black);
+    --border: var(--veltory-gray);
+    --input: var(--veltory-gray);
+    --primary: var(--veltory-orange);
+    --primary-foreground: 0 0% 100%;
+    --secondary: var(--veltory-gray);
+    --secondary-foreground: var(--veltory-black);
+    --accent: var(--veltory-orange);
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: var(--veltory-orange);
+    --radius: 0.5rem;
+
+    /* Gradients */
+    --gradient-dark: linear-gradient(135deg, hsl(var(--veltory-bg-dark)), hsl(var(--veltory-black)));
+    --gradient-orange: linear-gradient(135deg, hsl(var(--veltory-orange)), hsl(var(--veltory-orange-dark)));
+  }
+
+  .dark {
+    /* Dark theme overrides */
+    --background: var(--veltory-bg-dark);
+    --foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --card: var(--veltory-bg-dark);
+    --card-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-dark);
+  }
+}

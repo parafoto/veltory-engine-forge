@@ -95,7 +95,7 @@ const Configurator = () => {
   const selectedFrame = catalog.frames.find(f => f.id === selFrame);
 
   return (
-    <div className="configurator-page py-12">
+    <div className="py-12">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">

@@ -22,8 +22,8 @@ const Contacts = () => {
     {
       icon: Mail,
       title: "Email",
-      primary: "info@heparamotores.ru",
-      secondary: "service@heparamotores.ru",
+      primary: "info@heparamotor.ru",
+      secondary: "service@heparamotor.ru",
       description: "Подробные консультации, техническая документация"
     }
   ];
@@ -47,21 +47,21 @@ const Contacts = () => {
     {
       icon: Users,
       title: "Отдел продаж",
-      contact: "sales@heparamotores.ru",
+      contact: "sales@heparamotor.ru",
       phone: "+7 (xxx) xxx-xx-xx",
       description: "Подбор двигателей, коммерческие предложения, оптовые продажи"
     },
     {
       icon: Wrench,  
       title: "Сервисный центр",
-      contact: "service@heparamotores.ru",
+      contact: "service@heparamotor.ru",
       phone: "+7 (xxx) xxx-xx-xx",
       description: "Диагностика, ремонт, ТО, запчасти и расходники"
     },
     {
       icon: MessageCircle,
       title: "Техническая поддержка", 
-      contact: "support@heparamotores.ru",
+      contact: "support@heparamotor.ru",
       phone: "+7 (xxx) xxx-xx-xx",
       description: "Консультации по эксплуатации, установке, совместимости"
     }

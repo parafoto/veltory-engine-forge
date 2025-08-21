@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,14 @@ const Header = () => {
     href: "/frames"
   }, {
     name: "Сервис",
-    href: "/service"
+    href: "/service",
+    submenu: [{
+      name: "Сервис",
+      href: "/service"
+    }, {
+      name: "Конфигуратор запчастей",
+      href: "/parts-configurator"
+    }]
   }, {
     name: "Доставка и гарантия",
     href: "/shipping-warranty"
@@ -34,7 +42,9 @@ const Header = () => {
     name: "Контакты",
     href: "/contacts"
   }];
+
   const isActive = (href: string) => location.pathname === href;
+  const isActiveSubmenu = (submenu: any[]) => submenu.some(item => location.pathname === item.href);
   return <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border shadow-subtle">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
@@ -46,9 +56,29 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            {navigation.map(item => <Link key={item.name} to={item.href} className={`text-sm font-medium transition-colors hover:text-accent ${isActive(item.href) ? "text-accent border-b-2 border-accent" : "text-foreground"}`}>
-                {item.name}
-              </Link>)}
+            {navigation.map(item => 
+              item.submenu ? (
+                <DropdownMenu key={item.name}>
+                  <DropdownMenuTrigger className={`flex items-center text-sm font-medium transition-colors hover:text-accent ${isActiveSubmenu(item.submenu) ? "text-accent border-b-2 border-accent" : "text-foreground"}`}>
+                    {item.name}
+                    <ChevronDown className="ml-1 h-4 w-4" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start" className="min-w-[200px]">
+                    {item.submenu.map(subItem => (
+                      <DropdownMenuItem key={subItem.name} asChild>
+                        <Link to={subItem.href} className={`w-full ${isActive(subItem.href) ? "text-accent font-medium" : ""}`}>
+                          {subItem.name}
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <Link key={item.name} to={item.href} className={`text-sm font-medium transition-colors hover:text-accent ${isActive(item.href) ? "text-accent border-b-2 border-accent" : "text-foreground"}`}>
+                  {item.name}
+                </Link>
+              )
+            )}
           </nav>
 
           {/* CTA Button */}
@@ -74,10 +104,27 @@ const Header = () => {
                 </Button>
               </div>
               
-              <nav className="flex flex-col space-y-4">
-                {navigation.map(item => <Link key={item.name} to={item.href} onClick={() => setIsOpen(false)} className={`text-base font-medium py-2 px-3 rounded-md transition-colors ${isActive(item.href) ? "bg-accent/10 text-accent" : "text-foreground hover:bg-muted"}`}>
-                    {item.name}
-                  </Link>)}
+               <nav className="flex flex-col space-y-4">
+                 {navigation.map(item => 
+                   item.submenu ? (
+                     <div key={item.name} className="space-y-2">
+                       <div className={`text-base font-medium py-2 px-3 rounded-md transition-colors ${isActiveSubmenu(item.submenu) ? "bg-accent/10 text-accent" : "text-foreground"}`}>
+                         {item.name}
+                       </div>
+                       <div className="pl-4 space-y-1">
+                         {item.submenu.map(subItem => (
+                           <Link key={subItem.name} to={subItem.href} onClick={() => setIsOpen(false)} className={`block text-sm font-medium py-2 px-3 rounded-md transition-colors ${isActive(subItem.href) ? "bg-accent/10 text-accent" : "text-muted-foreground hover:bg-muted"}`}>
+                             {subItem.name}
+                           </Link>
+                         ))}
+                       </div>
+                     </div>
+                   ) : (
+                     <Link key={item.name} to={item.href} onClick={() => setIsOpen(false)} className={`text-base font-medium py-2 px-3 rounded-md transition-colors ${isActive(item.href) ? "bg-accent/10 text-accent" : "text-foreground hover:bg-muted"}`}>
+                       {item.name}
+                     </Link>
+                   )
+                 )}
                 
                 <div className="pt-4 border-t border-border">
                   <Button variant="cta" className="w-full" asChild>

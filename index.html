@@ -1,3 +1,4 @@
+```html name=index.html
 <!doctype html>
 <html lang="ru">
   <head>
@@ -8,7 +9,7 @@
 
     <!-- Фирменные цвета/переменные темы -->
     <link rel="stylesheet" href="/theme-veltory.css" />
-    <!-- Базовые утилиты/сетka + премиальный фон -->
+    <!-- Базовые утилиты/сетка + премиальный фон -->
     <link rel="stylesheet" href="/style.css" />
 
     <!-- Автотема: localStorage -> системная -->
@@ -33,6 +34,12 @@
   <body>
     <!-- Весь контент рендерит React из /src -->
     <div id="root"></div>
+
+    <!-- Заменил (или добавил вместо пустого <input>) на семантическую кнопку -->
+    <button class="btn-primary" style="margin:16px;">
+      Подобрать двигатель
+    </button>
+
     <noscript>Для работы сайта нужен JavaScript.</noscript>
 
     <!-- Точка входа Vite/React -->

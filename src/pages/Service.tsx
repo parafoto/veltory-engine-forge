@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import LeadForm from "@/components/LeadForm";
 import { Settings, Wrench, Package, Clock, CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Service = () => {
   const services = [
@@ -86,6 +87,18 @@ const Service = () => {
             Диагностика, ремонт, ТО и оригинальные запчасти.
           </p>
         </div>
+
+        {/* Quick Links */}
+        <section className="mb-12">
+          <div className="flex justify-center">
+            <Button variant="cta" size="lg" asChild>
+              <Link to="/parts-configurator" className="flex items-center gap-3">
+                <Package className="w-5 h-5" />
+                Конфигуратор запчастей
+              </Link>
+            </Button>
+          </div>
+        </section>
 
         {/* Services */}
         <section className="mb-16">

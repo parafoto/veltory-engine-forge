@@ -1,48 +1,19 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.ico" />
-    <title>VELTORY — официальный дилер H&E в России</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VELTORY Paramotors</title>
 
-    <!-- Фирменные цвета/переменные темы -->
-    <link rel="stylesheet" href="/theme-veltory.css" />
-    <!-- Базовые утилиты/сетка + премиальный фон -->
-    <link rel="stylesheet" href="/style.css" />
+  <!-- ВАЖНО: сначала ваши базовые стили/тема проекта -->
+  <link rel="stylesheet" href="/theme-veltory.css" />
+  <!-- Затем наш изолированный скин, чтобы он не ломал общий CSS -->
+  <link rel="stylesheet" href="/style.css" />
+</head>
 
-    <!-- Автотема: localStorage -> системная -->
-    <script>
-      (function () {
-        try {
-          const saved = localStorage.getItem('theme');
-          if (saved === 'dark') {
-            document.documentElement.classList.add('dark');
-          } else if (saved === 'light') {
-            document.documentElement.classList.remove('dark');
-          } else if (
-            window.matchMedia &&
-            window.matchMedia('(prefers-color-scheme: dark)').matches
-          ) {
-            document.documentElement.classList.add('dark');
-          }
-        } catch (_) {}
-      })();
-    </script>
-  </head>
-  <body>
-    <div class="hero-premium center">
-      <h2>Двигатели для парамоторов</h2>
-      <p>MVL, MV1, MV2, RS206, RS185, Raptor 277. Поставка, установка на рамы, сервис в РФ.</p>
-      <button class="btn btn-primary">Подобрать двигатель</button>
-    </div>
-
-    <!-- Весь контент рендерит React из /src -->
-    <div id="root"></div>
-
-    <noscript>Для работы сайта нужен JavaScript.</noscript>
-
-    <!-- Точка входа Vite/React -->
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!-- Просто добавили класс-обёртку -->
+<body class="veltory-skin">
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
 </html>

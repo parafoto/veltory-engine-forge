@@ -4,7 +4,7 @@ html, body { height: 100%; }
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; }
 
-/* ===== Переменные (используем то, что задаёт theme-veltory.css, с запасными значениями) ===== */
+/* ===== Переменные (резерв к theme-veltory.css) ===== */
 :root{
   --bg: #ffffff;
   --fg: #0e1623;
@@ -13,9 +13,14 @@ body { margin: 0; }
   --border: #e5e7eb;
   --primary: #ff7a1a;
   --primary-fg: #0f1b2b;
+
+  /* Премиальный фирменный хиро‑фон (тёмно‑синий) */
+  --hero-bg:
+    radial-gradient(1200px 600px at 70% -20%, #16263a 0%, #0f1b2b 40%, #0b1726 70%, #0a1220 100%),
+    linear-gradient(180deg, rgba(6,12,18,.00) 0%, rgba(6,12,18,.20) 60%, rgba(6,12,18,.40) 100%);
 }
 
-/* Темная тема может приходить из theme-veltory.css как .dark на <html> */
+/* Темная тема (если theme-veltory.css не переопределит) */
 .dark{
   --bg: #0d1522;
   --fg: #e8edf5;
@@ -44,6 +49,7 @@ body.admin{
   padding: 16px;
 }
 
+/* ===== Шапка (не меняем структуру, лишь улучшения) ===== */
 header.admin-header{
   position: sticky; top: 0; z-index: 5;
   background: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -78,9 +84,7 @@ nav.admin-nav a:hover{
   border-radius: 12px;
   padding: 16px;
 }
-.grid{
-  display: grid; gap: 16px;
-}
+.grid{ display: grid; gap: 16px; }
 @media (min-width: 800px){
   .grid.cols-2{ grid-template-columns: 1fr 1fr; }
   .grid.cols-3{ grid-template-columns: repeat(3, 1fr); }
@@ -91,15 +95,25 @@ nav.admin-nav a:hover{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
   border:1px solid var(--border); background: transparent; color: inherit;
   padding:10px 14px; border-radius:10px; cursor:pointer;
-  transition: filter .15s ease, transform .04s ease;
+  transition: filter .15s ease, transform .04s ease, box-shadow .15s ease;
 }
 .btn:hover{ filter: brightness(1.05); }
 .btn:active{ transform: translateY(1px); }
 .btn-primary{
   background: var(--primary); color: var(--primary-fg);
   border-color: color-mix(in oklab, var(--primary), black 12%);
+  box-shadow: 0 6px 18px -6px color-mix(in oklab, var(--primary), black 30%);
 }
 .btn-ghost{ background: transparent; }
+
+/* Для тёмного фона — «прозрачная» кнопка с белой обводкой */
+.on-dark .btn-ghost{
+  border-color: rgba(255,255,255,.22);
+  color: #f3f6fb;
+}
+.on-dark .btn-ghost:hover{
+  background: rgba(255,255,255,.06);
+}
 
 /* ===== Формы ===== */
 .label{ display:block; font-weight:600; margin-bottom:6px; }
@@ -122,3 +136,49 @@ nav.admin-nav a:hover{
 .flex{ display:flex; gap:12px; align-items:center; } .space-between{ justify-content: space-between; }
 .text-muted{ color: var(--muted); }
 .center{ text-align:center; }
+
+/* ===================================================================== */
+/* ===============  ПРЕМИАЛЬНЫЙ ХИРО‑ФОН ДЛЯ ВЕРХНЕГО БЛОКА  ============ */
+/* ===================================================================== */
+
+/* Универсальный класс — можно навесить в React на верхнюю секцию */
+.hero-premium,
+.hero, .Hero, .masthead, .page-hero, .site-hero {
+  background: var(--hero-bg);
+  color: #f3f6fb;           /* читаемый текст на тёмно-синем */
+  border: none !important;  /* убрать светлые рамки, если были */
+}
+
+/* Немного «воздуха» для верхнего блока */
+.hero-premium,
+.hero, .Hero, .masthead, .page-hero, .site-hero {
+  padding-top: clamp(40px, 8vw, 96px);
+  padding-bottom: clamp(40px, 8vw, 96px);
+}
+
+/* Кнопки на темном фоне */
+.hero-premium .btn-ghost,
+.hero .btn-ghost,
+.Hero .btn-ghost,
+.masthead .btn-ghost,
+.page-hero .btn-ghost,
+.site-hero .btn-ghost {
+  border-color: rgba(255,255,255,.22);
+  color: #f3f6fb;
+}
+.hero-premium .btn-ghost:hover,
+.hero .btn-ghost:hover,
+.Hero .btn-ghost:hover,
+.masthead .btn-ghost:hover,
+.page-hero .btn-ghost:hover,
+.site-hero .btn-ghost:hover{
+  background: rgba(255,255,255,.06);
+}
+
+/* Для поля подбора/поиска в хиро — легкая подсветка */
+.hero-premium input,
+.hero input {
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.18);
+  color: #f3f6fb;
+}
